@@ -137,7 +137,7 @@ export default function ResumeChat() {
     return (
         <>
             {/* Floating Button */}
-            <div className="fixed bottom-8 right-8 z-[100]">
+            <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[100]">
                 <motion.button
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
@@ -156,7 +156,7 @@ export default function ResumeChat() {
                         initial={{ opacity: 0, y: 100, scale: 0.8 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 100, scale: 0.8 }}
-                        className="fixed bottom-28 right-8 z-[100] w-[350px] md:w-[400px] h-[500px] bg-[--color-card-bg] brutal-border brutal-shadow-cyan flex flex-col overflow-hidden glass-card"
+                        className="fixed bottom-20 md:bottom-28 right-4 md:right-8 z-[100] w-[calc(100vw-32px)] sm:w-[350px] md:w-[400px] h-[70vh] max-h-[500px] bg-[--color-card-bg] brutal-border brutal-shadow-cyan flex flex-col overflow-hidden glass-card"
                     >
                         {/* Header */}
                         <div className="bg-black p-4 border-b-4 border-[--color-border-brutal] flex justify-between items-center">

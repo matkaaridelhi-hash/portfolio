@@ -42,7 +42,7 @@ export default function Portfolio() {
             <div className="inline-block self-start p-2 bg-[--color-accent-cyan] text-black font-bold font-mono brutal-border brutal-shadow-white rotate-[-2deg]">
               Senior Telecom Expense Analyst
             </div>
-            <h1 className="text-7xl md:text-9xl font-black tracking-tighter leading-none uppercase">
+            <h1 className="text-6xl md:text-9xl font-black tracking-tighter leading-none uppercase break-words">
               Ankit <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[--color-accent-yellow] to-[--color-accent-pink]">Saxena</span>
             </h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-2xl font-mono relative z-10 pb-4">
@@ -109,8 +109,8 @@ export default function Portfolio() {
           >
             <div className="flex flex-col md:flex-row gap-4 justify-between items-end">
               <div className="flex items-center gap-4">
-                <Target className="w-12 h-12 text-[--color-accent-purple]" />
-                <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight">Core Expertise</h2>
+                <Target className="w-12 h-12 text-[--color-accent-purple] shrink-0" />
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight break-words">Core Expertise</h2>
               </div>
               <p className="font-mono opacity-60 text-right max-w-sm">A synthesis of telecom management, software engineering, and AI integration.</p>
             </div>
@@ -138,12 +138,12 @@ export default function Portfolio() {
         </section>
 
         {/* AI & AUTOMATION WORKFLOW */}
-        <section className="scroll-m-32 bg-[--color-card-bg] brutal-border brutal-shadow-purple p-12 overflow-hidden relative">
+        <section className="scroll-m-32 bg-[--color-card-bg] brutal-border brutal-shadow-purple p-6 md:p-12 overflow-hidden relative">
           <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
             <Cpu className="w-64 h-64" />
           </div>
           <div className="flex flex-col gap-12 relative z-10">
-            <h2 className="text-4xl md:text-5xl font-black uppercase italic">The AI Integration Edge</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase italic break-words">The AI Integration Edge</h2>
             <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="flex-1 space-y-6">
                 <p className="text-xl font-mono leading-relaxed">
@@ -162,12 +162,12 @@ export default function Portfolio() {
                   ))}
                 </div>
               </div>
-              <div className="flex-1 w-full bg-black p-8 brutal-border brutal-shadow-cyan font-mono text-sm space-y-4">
-                <div className="text-[--color-accent-cyan]">{"// AI Workflow Simulation"}</div>
-                <div className="flex gap-2"><span className="text-[--color-accent-pink]">INPUT:</span> Raw_Telecom_Invoice.pdf</div>
-                <div className="flex gap-2"><span className="text-[--color-accent-purple]">PROCESS:</span> OCR {'->'} Data_Extract {'->'} AI_Audit</div>
-                <div className="flex gap-2"><span className="text-[--color-accent-yellow]">OUTPUT:</span> Dispute_Report_v1.xls</div>
-                <div className="mt-4 pt-4 border-t border-white/20">
+              <div className="flex-1 w-full max-w-[85vw] md:max-w-none bg-black p-4 sm:p-8 brutal-border brutal-shadow-cyan font-mono text-xs sm:text-sm space-y-4 overflow-x-auto">
+                <div className="text-[--color-accent-cyan] whitespace-nowrap">{"// AI Workflow Simulation"}</div>
+                <div className="flex gap-2 whitespace-nowrap"><span className="text-[--color-accent-pink]">INPUT:</span> Raw_Telecom_Invoice.pdf</div>
+                <div className="flex gap-2 whitespace-nowrap"><span className="text-[--color-accent-purple]">PROCESS:</span> OCR {'->'} Data_Extract {'->'} AI_Audit</div>
+                <div className="flex gap-2 whitespace-nowrap"><span className="text-[--color-accent-yellow]">OUTPUT:</span> Dispute_Report_v1.xls</div>
+                <div className="mt-4 pt-4 border-t border-white/20 whitespace-nowrap">
                   <span className="animate-pulse">_</span> AI Audit Complete. 4 discrepancies found.
                 </div>
               </div>
@@ -184,12 +184,12 @@ export default function Portfolio() {
             className="flex flex-col gap-8"
           >
             <div className="flex items-center gap-4">
-              <Calculator className="w-12 h-12 text-[--color-accent-yellow]" />
-              <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight">Telecom Expense</h2>
+              <Calculator className="w-12 h-12 text-[--color-accent-yellow] shrink-0" />
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight break-words">Telecom Expense</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
-              <div className="bg-[--color-card-bg] p-8 brutal-border brutal-shadow-white relative overflow-hidden group">
+              <div className="bg-[--color-card-bg] p-6 sm:p-8 brutal-border brutal-shadow-white relative overflow-hidden group">
                 <div className="absolute w-64 h-64 bg-[--color-accent-pink] rounded-full blur-[100px] -bottom-20 -right-20 opacity-20"></div>
                 <h3 className="text-3xl font-bold mb-4 font-mono">Operations & Auditing</h3>
                 <p className="text-lg opacity-80 mb-6">
@@ -233,13 +233,13 @@ export default function Portfolio() {
             className="flex flex-col gap-12"
           >
             <div className="flex items-center gap-4">
-              <Code2 className="w-12 h-12 text-[--color-accent-pink]" />
-              <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight">SaaS Engineering</h2>
+              <Code2 className="w-12 h-12 text-[--color-accent-pink] shrink-0" />
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight break-words">SaaS Engineering</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* EMS Project */}
-              <div className="group bg-[--color-card-bg] brutal-border brutal-shadow-pink p-8 brutal-hover duration-300">
+              <div className="group bg-[--color-card-bg] brutal-border brutal-shadow-pink p-6 sm:p-8 brutal-hover duration-300">
                 <div className="bg-black text-[--color-accent-yellow] p-3 inline-block font-mono font-bold brutal-border mb-6 rotate-2">
                   FULL-STACK DEV
                 </div>
@@ -255,7 +255,7 @@ export default function Portfolio() {
               </div>
 
               {/* Trading Journal Project */}
-              <div className="group bg-[--color-card-bg] brutal-border brutal-shadow-cyan p-8 brutal-hover duration-300">
+              <div className="group bg-[--color-card-bg] brutal-border brutal-shadow-cyan p-6 sm:p-8 brutal-hover duration-300">
                 <div className="bg-white text-black p-3 inline-block font-mono font-bold brutal-border mb-6 -rotate-2">
                   AI INTEGRATION
                 </div>
@@ -282,8 +282,8 @@ export default function Portfolio() {
             className="flex flex-col gap-12"
           >
             <div className="flex items-center gap-4">
-              <Paintbrush className="w-12 h-12 text-[--color-accent-cyan]" />
-              <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight">Creative Gallery</h2>
+              <Paintbrush className="w-12 h-12 text-[--color-accent-cyan] shrink-0" />
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight break-words">Creative Gallery</h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pb-32">
