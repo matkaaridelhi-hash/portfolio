@@ -54,9 +54,13 @@ export default function ResumeChat() {
             let response = "I don't have that specific detail in my current knowledge base. However, Ankit is highly adaptable and likely has the experience you're looking for. You can reach out to him directly at ankitsaxena.as@gmail.com!";
             const query = input.toLowerCase();
 
-            // Broad Greetings
-            if (query === "hi" || query === "hello" || query.includes("hey")) {
-                response = "Hello! I can answer questions about Ankit's resume, including his 10+ years of telecom experience, his automation skills, or his technical projects. What would you like to know?";
+            // Direct specific questions
+            if (query.match(/last company|current company|latest company|recent company|where did.*work last|last.*worked/)) {
+                response = "Ankit's most recent company is **PBC Communications Inc.**, where he worked as a Senior Telecom Expense Analyst from August 2014 to March 2025.";
+            } else if (query.match(/how many years|how long|years of experience/)) {
+                response = "He has over 10+ years of professional experience in Telecom Expense Management and Data Automation.";
+            } else if (query.match(/what does.*do|who is ankit|current role|profession/)) {
+                response = "Ankit is a Senior Telecom Expense Analyst and Data Automation Specialist. He specializes in cost optimization, process automation, and building customized data solutions.";
             }
             // Explicit Companies
             else if (query.includes("pbc") || query.includes("communications")) {
@@ -72,10 +76,6 @@ export default function ResumeChat() {
             else if (query.includes("champ info") || query.includes("champ")) {
                 response = "At Champ Info Software (Jun 2012 - Dec 2013), Ankit started as an MIS Executive. He prepared daily, weekly, and monthly management reports and evaluated recurring reporting errors to improve process efficiency.";
             }
-            // Broad Experience
-            else if (query.includes("experience") || query.includes("work") || query.includes("background") || query.includes("summary") || query.includes("job") || query.includes("role")) {
-                response = "Ankit has an impressive 10+ years of experience primarily in Telecom Expense Management (TEM) and Data Automation. He spent over a decade at PBC Communications optimizing costs and automating financial workflows. He additionally developed a number of full-stack SaaS and AI tools.";
-            }
             // Specific Projects
             else if (query.includes("flasho") || query.includes("hrms")) {
                 response = "Flasho HRMS is an Employee Management System where Ankit acted as a Full-Stack Developer. He used Google Apps Script and Adobe Suite (for UI/UX) to create a system that streamlined facility management operations and staff tracking.";
@@ -86,7 +86,7 @@ export default function ResumeChat() {
             else if (query.includes("epcos") || query.includes("dso")) {
                 response = "At EPCOS India, Ankit spearheaded an automation project using Excel VBA to streamline Day Sales Outstanding (DSO) reporting. It provided critical regional insights for executive management.";
             }
-            else if (query.includes("project") || query.includes("portfolio") || query.includes("build") || query.includes("made")) {
+            else if (query.match(/project|portfolio|build|made|create/)) {
                 response = "Ankit's key projects include:\n\n" +
                     "1. PBC Contract Management Tool: Centralized repo with automated email triggers.\n" +
                     "2. EPCOS India DSO Automation: Complex VBA statistical reporting.\n" +
@@ -94,16 +94,16 @@ export default function ResumeChat() {
                     "4. Kotoba Journal: AI-integrated vocabulary tracking application.";
             }
             // Skills
-            else if (query.includes("automation") || query.includes("script") || query.includes("vba") || query.includes("excel")) {
+            else if (query.match(/automation|script|vba|excel|macro/)) {
                 response = "Ankit heavily specializes in Data & Process Automation. He is highly proficient in advanced Excel (Power Pivot, VLOOKUP), VBA Macros, Python (Pandas/NumPy basics), and Google Apps Script, using these to build complex financial dashboards and cut down manual reporting time.";
             }
-            else if (query.includes("ai") || query.includes("artificial intelligence") || query.includes("llm")) {
+            else if (query.match(/ai|artificial intelligence|llm/)) {
                 response = "Ankit actively leverages AI for automation. He integrates AI APIs into practical tools—like his Kotoba Journal project—adding context-aware functionality to daily workflows.";
             }
-            else if (query.includes("telecom") || query.includes("tem")) {
+            else if (query.match(/telecom|tem|invoice/)) {
                 response = "Ankit is a Senior Telecom Expense Analyst. His skills include Invoice Reconciliation, Vendor Negotiations, Contract Compliance, Inventory Management, and identifying major cost-saving opportunities.";
             }
-            else if (query.includes("skill") || query.includes("tech") || query.includes("know") || query.includes("stack") || query.includes("language")) {
+            else if (query.match(/skill|tech|know|stack|language/)) {
                 response = "Ankit's core competencies:\n\n" +
                     "• Telecom: TEM, Invoice Recon, Vendor Negotiation, Compliance\n" +
                     "• Financial Analysis: Cost Optimization, Budgeting, ROI Analysis\n" +
@@ -111,15 +111,23 @@ export default function ResumeChat() {
                     "• Creative: UI/UX (Adobe Suite), Data Visualization, Dashboards";
             }
             // Education
-            else if (query.includes("education") || query.includes("degree") || query.includes("study") || query.includes("college") || query.includes("university")) {
+            else if (query.match(/education|degree|study|college|university/)) {
                 response = "Ankit holds a PGDM (Post Graduate Diploma in Management) in Data Analysis from IMT CDL, Ghaziabad, and a Bachelor of Commerce (B.Com) from CCS University, Meerut.";
             }
             // Contact
-            else if (query.includes("contact") || query.includes("email") || query.includes("phone") || query.includes("reach") || query.includes("hire")) {
+            else if (query.match(/contact|email|phone|reach|hire/)) {
                 response = "Ankit is open to opportunities. You can easily reach him at:\n\n" +
                     "📧 Email: ankitsaxena.as@gmail.com\n" +
                     "📞 Phone: +91 8860501243\n" +
                     "📍 Location: Noida, Uttar Pradesh - 201307";
+            }
+            // Broad Greetings
+            else if (query.match(/\bhi\b|\bhello\b|\bhey\b/)) {
+                response = "Hello! I can answer questions about Ankit's resume, including his 10+ years of telecom experience, his automation skills, or his technical projects. What would you like to know?";
+            }
+            // Broad Experience Backup
+            else if (query.match(/experience|work|background|summary|job|role/)) {
+                response = "Ankit has an impressive 10+ years of experience primarily in Telecom Expense Management (TEM) and Data Automation. He spent over a decade at PBC Communications optimizing costs and automating financial workflows. He additionally developed a number of full-stack SaaS and AI tools.";
             }
 
             setMessages((prev) => [...prev, { role: "bot", content: response }]);
