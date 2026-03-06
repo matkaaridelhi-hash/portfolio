@@ -39,8 +39,50 @@ body {
   box-shadow: 6px 6px 0px 0px var(--color-border-brutal);
 }
 
+.brutal-shadow-purple {
+  box-shadow: 6px 6px 0px 0px var(--color-accent-purple);
+}
+
 .brutal-hover:hover {
   transform: translate(-3px, -3px);
   box-shadow: 10px 10px 0px 0px var(--color-accent-yellow);
   transition: all 0.2s ease-in-out;
+}
+
+.glass-card {
+  background: rgba(20, 20, 21, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-accent-pink);
+  border-radius: 10px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
