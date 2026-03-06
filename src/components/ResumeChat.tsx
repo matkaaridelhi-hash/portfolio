@@ -54,38 +54,72 @@ export default function ResumeChat() {
             let response = "I don't have that specific detail in my current knowledge base. However, Ankit is highly adaptable and likely has the experience you're looking for. You can reach out to him directly at ankitsaxena.as@gmail.com!";
             const query = input.toLowerCase();
 
-            if (query.includes("pbc") || query.includes("latest") || (query.includes("experience") && (query.includes("summary") || query.includes("detail")))) {
-                response = "At PBC Communications Inc. (2014-2025), Ankit served as a Senior Telecom Expense Analyst. His key contributions included:\n\n" +
-                    "• Managed end-to-end telecom invoice lifecycles, ensuring payment accuracy and contract reconciliation.\n" +
-                    "• Conducted rigorous cost optimization, identifying savings by eliminating redundant charges.\n" +
-                    "• Served as the primary vendor liaison, negotiating contract terms and ensuring compliance.\n" +
-                    "• Spearheaded process automation for expense management and inventory control of telecom assets.\n" +
-                    "• Developed a custom Contract Management Tool with automated 90/30-day triggers to eliminate renewal risks.";
-            } else if (query.includes("automation") || query.includes("vba") || query.includes("script") || query.includes("excel")) {
-                response = "Ankit is a Data Automation specialist with a track record of high-impact tools:\n\n" +
-                    "• DSO Automation (EPCOS India): Spearheaded VBA-based reporting that provided critical regional financial insights.\n" +
-                    "• Contract Management (PBC): Built a centralized repository with automated triggers.\n" +
-                    "• Flasho HRMS: Full-stack tool built with Google Apps Script to streamline facility management and staff tracking.\n" +
-                    "• Mastery in Excel (Pivot, VLOOKUP) and creating complex dashboards.";
-            } else if (query.includes("skill") || query.includes("tech") || query.includes("python")) {
-                response = "Ankit's technical stack is a mix of financial analysis and modern engineering:\n\n" +
-                    "• Core: Advanced Excel, VBA, Google Apps Script.\n" +
-                    "• Development: Python (Pandas/NumPy), React, Next.js, AI API Integration.\n" +
-                    "• Domain: Telecom Expense Management (TEM), Invoice Recon, Financial Auditing, Inventory Control.\n" +
-                    "• Creative: UI/UX Design with Adobe Suite, Dashboards, and Video Editing.";
-            } else if (query.includes("project") || query.includes("kotoba") || query.includes("flasho")) {
-                response = "Key Projects:\n\n" +
-                    "• Flasho HRMS: A comprehensive employee management system showcasing full-stack skills.\n" +
-                    "• Kotoba Journal: An AI-integrated language tool for Japanese vocabulary tracking.\n" +
-                    "• DSO Reporting Tool: Automated financial insights for EPCOS India using VBA.\n" +
-                    "• PBC Contract Tool: Centralized renewal management system.";
-            } else if (query.includes("contact") || query.includes("email") || query.includes("phone") || query.includes("reach")) {
-                response = "You can contact Ankit Saxena here:\n\n" +
-                    "• Email: ankitsaxena.as@gmail.com\n" +
-                    "• Phone: +91 8860501243\n" +
-                    "• Location: Noida, Uttar Pradesh";
-            } else if (query.includes("education")) {
-                response = "Ankit holds a PGDM in Data Analysis from IMT CDL (Ghaziabad) and a Bachelor of Commerce (B.Com) from CCS University (Meerut).";
+            // Broad Greetings
+            if (query === "hi" || query === "hello" || query.includes("hey")) {
+                response = "Hello! I can answer questions about Ankit's resume, including his 10+ years of telecom experience, his automation skills, or his technical projects. What would you like to know?";
+            }
+            // Explicit Companies
+            else if (query.includes("pbc") || query.includes("communications")) {
+                response = "At PBC Communications Inc. (Aug 2014 - Mar 2025), Ankit was a Senior Telecom Expense Analyst. His vast responsibilities included:\n\n" +
+                    "• Managing the end-to-end lifecycle of telecom invoices and reconciling discrepancies.\n" +
+                    "• Automating DSO (Day Sales Outstanding) reporting and vendor negotiations.\n" +
+                    "• Inventory control and auditing to eliminate redundant charges.\n" +
+                    "• Building a custom Contract Management Tool with 90/30-day automated triggers, which completely eliminated renewal risks.";
+            }
+            else if (query.includes("virtual employee")) {
+                response = "At Virtual Employee Pvt. Ltd. (Dec 2013 - Jul 2014), Ankit worked as an MIS Specialist. He managed MIS activities, trained new hires as a Subject Matter Expert, and generated high-priority business reports with 100% accuracy.";
+            }
+            else if (query.includes("champ info") || query.includes("champ")) {
+                response = "At Champ Info Software (Jun 2012 - Dec 2013), Ankit started as an MIS Executive. He prepared daily, weekly, and monthly management reports and evaluated recurring reporting errors to improve process efficiency.";
+            }
+            // Broad Experience
+            else if (query.includes("experience") || query.includes("work") || query.includes("background") || query.includes("summary") || query.includes("job") || query.includes("role")) {
+                response = "Ankit has an impressive 10+ years of experience primarily in Telecom Expense Management (TEM) and Data Automation. He spent over a decade at PBC Communications optimizing costs and automating financial workflows. He additionally developed a number of full-stack SaaS and AI tools.";
+            }
+            // Specific Projects
+            else if (query.includes("flasho") || query.includes("hrms")) {
+                response = "Flasho HRMS is an Employee Management System where Ankit acted as a Full-Stack Developer. He used Google Apps Script and Adobe Suite (for UI/UX) to create a system that streamlined facility management operations and staff tracking.";
+            }
+            else if (query.includes("kotoba") || query.includes("journal")) {
+                response = "Kotoba Journal is an AI-language tool project. It focuses on Japanese vocabulary tracking and demonstrates his capability to integrate AI APIs into daily productivity workflows.";
+            }
+            else if (query.includes("epcos") || query.includes("dso")) {
+                response = "At EPCOS India, Ankit spearheaded an automation project using Excel VBA to streamline Day Sales Outstanding (DSO) reporting. It provided critical regional insights for executive management.";
+            }
+            else if (query.includes("project") || query.includes("portfolio") || query.includes("build") || query.includes("made")) {
+                response = "Ankit's key projects include:\n\n" +
+                    "1. PBC Contract Management Tool: Centralized repo with automated email triggers.\n" +
+                    "2. EPCOS India DSO Automation: Complex VBA statistical reporting.\n" +
+                    "3. Flasho HRMS: Full-stack Employee Management System.\n" +
+                    "4. Kotoba Journal: AI-integrated vocabulary tracking application.";
+            }
+            // Skills
+            else if (query.includes("automation") || query.includes("script") || query.includes("vba") || query.includes("excel")) {
+                response = "Ankit heavily specializes in Data & Process Automation. He is highly proficient in advanced Excel (Power Pivot, VLOOKUP), VBA Macros, Python (Pandas/NumPy basics), and Google Apps Script, using these to build complex financial dashboards and cut down manual reporting time.";
+            }
+            else if (query.includes("ai") || query.includes("artificial intelligence") || query.includes("llm")) {
+                response = "Ankit actively leverages AI for automation. He integrates AI APIs into practical tools—like his Kotoba Journal project—adding context-aware functionality to daily workflows.";
+            }
+            else if (query.includes("telecom") || query.includes("tem")) {
+                response = "Ankit is a Senior Telecom Expense Analyst. His skills include Invoice Reconciliation, Vendor Negotiations, Contract Compliance, Inventory Management, and identifying major cost-saving opportunities.";
+            }
+            else if (query.includes("skill") || query.includes("tech") || query.includes("know") || query.includes("stack") || query.includes("language")) {
+                response = "Ankit's core competencies:\n\n" +
+                    "• Telecom: TEM, Invoice Recon, Vendor Negotiation, Compliance\n" +
+                    "• Financial Analysis: Cost Optimization, Budgeting, ROI Analysis\n" +
+                    "• Technical: Excel VBA, Google Apps Script, Python, Next.js/React\n" +
+                    "• Creative: UI/UX (Adobe Suite), Data Visualization, Dashboards";
+            }
+            // Education
+            else if (query.includes("education") || query.includes("degree") || query.includes("study") || query.includes("college") || query.includes("university")) {
+                response = "Ankit holds a PGDM (Post Graduate Diploma in Management) in Data Analysis from IMT CDL, Ghaziabad, and a Bachelor of Commerce (B.Com) from CCS University, Meerut.";
+            }
+            // Contact
+            else if (query.includes("contact") || query.includes("email") || query.includes("phone") || query.includes("reach") || query.includes("hire")) {
+                response = "Ankit is open to opportunities. You can easily reach him at:\n\n" +
+                    "📧 Email: ankitsaxena.as@gmail.com\n" +
+                    "📞 Phone: +91 8860501243\n" +
+                    "📍 Location: Noida, Uttar Pradesh - 201307";
             }
 
             setMessages((prev) => [...prev, { role: "bot", content: response }]);
