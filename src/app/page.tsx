@@ -16,7 +16,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen bg-[--color-bg-base] text-[--color-fg-base] selection:bg-[--color-accent-yellow] selection:text-black pt-20 pb-0 overflow-hidden">
+    <div className="min-h-screen bg-[--color-bg-base] text-[--color-fg-base] selection:bg-[--color-accent-yellow] selection:text-black pt-20 pb-0 overflow-x-hidden w-full relative">
 
       {/* Navbar Pattern */}
       <nav className="fixed top-0 w-full z-50 bg-[--color-bg-base] border-b-4 border-[--color-border-brutal] p-4 font-mono font-bold flex justify-between items-center px-8 md:px-16">
@@ -30,7 +30,7 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-6 md:px-12 mt-20 flex flex-col gap-32">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mt-20 flex flex-col gap-24 md:gap-32 w-full relative">
         {/* HERO SECTION */}
         <section id="about" className="flex flex-col md:flex-row gap-12 items-center min-h-[70vh]">
           <motion.div
@@ -42,18 +42,18 @@ export default function Portfolio() {
             <div className="inline-block self-start p-2 bg-[--color-accent-cyan] text-black font-bold font-mono brutal-border brutal-shadow-white rotate-[-2deg]">
               Senior Telecom Expense Analyst
             </div>
-            <h1 className="text-6xl md:text-9xl font-black tracking-tighter leading-none uppercase break-words">
+            <h1 className="text-5xl sm:text-6xl md:text-9xl font-black tracking-tighter leading-none uppercase break-words">
               Ankit <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[--color-accent-yellow] to-[--color-accent-pink]">Saxena</span>
             </h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-2xl font-mono relative z-10 pb-4">
               Over a decade of experience optimizing costs, engineering AI-driven automations, and building high-impact data solutions.
             </p>
 
-            <div className="flex gap-4">
-              <a href="#specialization" className="brutal-border brutal-shadow-yellow brutal-hover bg-black px-8 py-4 font-bold text-lg inline-flex items-center gap-2 w-max text-white uppercase transition-transform h-min">
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <a href="#specialization" className="brutal-border brutal-shadow-yellow brutal-hover bg-black px-6 py-4 font-bold text-base sm:text-lg inline-flex items-center justify-center gap-2 w-full sm:w-max text-white uppercase transition-transform h-min">
                 View Expertise <ArrowRight className="w-5 h-5" />
               </a>
-              <a href="/Assets/RESUME - Ankit Saxena.pdf" download="ANKIT_SAXENA_RESUME.pdf" className="brutal-border brutal-shadow-pink brutal-hover bg-[--color-card-bg] px-8 py-4 font-bold text-lg inline-flex items-center gap-2 w-max text-white uppercase transition-transform h-min">
+              <a href="/Assets/RESUME - Ankit Saxena.pdf" download="ANKIT_SAXENA_RESUME.pdf" className="brutal-border brutal-shadow-pink brutal-hover bg-[--color-card-bg] px-6 py-4 font-bold text-base sm:text-lg inline-flex items-center justify-center gap-2 w-full sm:w-max text-white uppercase transition-transform h-min">
                 Resume <FileText className="w-5 h-5" />
               </a>
             </div>
@@ -178,8 +178,8 @@ export default function Portfolio() {
         {/* TELECOM EXPENSE ANALYSIS SECTION */}
         <section id="telecom" className="scroll-m-32">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             className="flex flex-col gap-8"
           >
